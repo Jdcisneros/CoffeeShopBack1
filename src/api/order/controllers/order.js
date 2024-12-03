@@ -1,11 +1,12 @@
 'use strict';
 
 // @ts-ignore
-const stripe = require('stripe')("sk_test_51QRlfVABogrp7lDZCz2FZMlSjXNQFdabTMxQyCPyNWbpSGG3pOxbYUTQ6OIcMZ7Xqb9RUgjjojL7SQSyz8NXcF4200AaD961Tr"); // Asegúrate de que 'STRIPE_KEY' está en las variables de entorno
+const stripe = require('stripe')(process.env.STRIPE_KEY); // Asegúrate de que 'STRIPE_KEY' está en las variables de entorno
 
 /**
  * order controller
  */
+// @ts-ignore
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
